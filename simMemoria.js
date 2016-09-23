@@ -34,10 +34,8 @@ var bExp = "0.5";
 var cCor = "gray";
 var cExp = "0.5";
 
-op = document.createElement("INPUT")
-op.type="text";
-op.size="1";
-op.id='opId';
+var op = document.getElementById("opId");
+op.id='opCombo';
 
 var end = document.createElement("INPUT");
 end.type="text";
@@ -53,9 +51,7 @@ ac.id='acId';
 
 
 function Text(){
-    op.setAttribute("type", "text");
-    op.setAttribute("value", "");
-    document.body.appendChild(op);
+    
 
     end.setAttribute("type", "text");
     end.setAttribute("value", "");
@@ -336,7 +332,7 @@ function Iniciar() {
 
 
 function clicar() {
-    v_dec = document.getElementById('opId').value;
+    v_dec = document.getElementById('opCombo').value;
     v_rem = document.getElementById('endId').value;
     v_ac = document.getElementById('acId').value;
 
