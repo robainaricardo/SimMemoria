@@ -1,7 +1,7 @@
 var canvas;//o elemento canvas sobre o qual desenharemos
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 
-var WIDTH = 1000//largura da área retangular
+var WIDTH = 1300//largura da área retangular
 var HEIGHT = 600;//altura da área retangular
 
 var v_rem = "";
@@ -12,10 +12,22 @@ var v_whrite = "gray";
 var v_rem = "";
 var v_ac = "";
 var v_dec = "";
-var v_m0 = "";
-var v_m1 = "";
-var v_m2 = "";
-var v_m3 = "";
+var v_m0 = "0";
+var v_m1 = "1";
+var v_m2 = "2";
+var v_m3 = "3";
+var v_m4 = "4";
+var v_m5 = "5";
+var v_m6 = "6";
+var v_m7 = "7";
+var v_m8 = "8";
+var v_m9 = "9";
+var v_m10 = "10";
+var v_m11 = "11";
+var v_m12 = "12";
+var v_m13 = "13";
+var v_m14 = "14";
+var v_m15 = "15";
 var qa = -110;
 var qb = -110;
 
@@ -38,9 +50,12 @@ var op = document.getElementById("opId");
 op.id='opCombo';
 
 var end = document.createElement("INPUT");
-end.type="text";
-end.size="2";
+
 end.id='endId';
+end.max="4";
+end.type="text";
+end.size="4";
+end.maxlength=1;
 
 
 var ac = document.createElement("INPUT");
@@ -57,6 +72,7 @@ function Text(){
     end.setAttribute("type", "text");
     end.setAttribute("value", "");
     document.body.appendChild(end);
+
 
     ac.setAttribute("type", "text");
     ac.setAttribute("value", v_rdmout);
@@ -111,9 +127,9 @@ function Desenhar() {
     ctx.strokeStyle = bCor;
     ctx.moveTo(120, 300);  
     ctx.lineTo(120, 20);
-    ctx.lineTo(800, 20);
-    ctx.lineTo(800, 250);
-    ctx.lineTo(600, 250);
+    ctx.lineTo(1200, 20);
+    ctx.lineTo(1200, 250);
+    ctx.lineTo(890, 250);
     ctx.stroke();
     ctx.closePath();
 
@@ -123,9 +139,9 @@ function Desenhar() {
     ctx.strokeStyle = cCor;
     ctx.moveTo(115, 300);  
     ctx.lineTo(115, 15);
-    ctx.lineTo(805, 15);
-    ctx.lineTo(805, 350);
-    ctx.lineTo(600, 350);
+    ctx.lineTo(1205, 15);
+    ctx.lineTo(1205, 350);
+    ctx.lineTo(890, 350);
     ctx.stroke();
     ctx.closePath();
 
@@ -186,55 +202,194 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = "#BEF781";
     ctx.font = "bold 18px sans-serif";
-    ctx.fillText("MEMORIA",400,195);
-    ctx.fillRect(400,200 ,200, 200);
+    ctx.fillText("MEMORIA",400,170);
+    ctx.fillRect(400,170 ,480, 300);
     ctx.closePath();
 
+    //Variaveis Memoria
+
+    //Linha 1
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_m0,440,250);
+    ctx.fillText(v_m0,410,220);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_m1,540,250);
+    ctx.fillText(v_m1,530,220);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_m2,440,350);
+    ctx.fillText(v_m2,650,220);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_m3,540,350);
+    ctx.fillText(v_m3,770,220);
+
+    //Linha 2
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m4,410,295);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m5,530,295);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m6,650,295);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m7,770,295);
+
+    //Linha 3
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m8,410,370);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m9,530,370);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m10,650,370);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m11,770,370);
+
+    //Linha 3
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m12,410,445);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m13,530,445);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m14,650,445);
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(v_m15,770,445);
+
+
 
     
     //Enderecos de memoria
    
     ctx.fillStyle = "black";
     ctx.font = "bold 13px sans-serif";
-    ctx.fillText("00",405,220);
+    ctx.fillText("0000",405,190);
 
     ctx.fillStyle = "black";
     ctx.font = "bold 13px sans-serif";
-    ctx.fillText("01",505,220);
+    ctx.fillText("0001",525,190);
 
     ctx.fillStyle = "black";
     ctx.font = "bold 13px sans-serif";
-    ctx.fillText("10",405,320);
+    ctx.fillText("0010",645,190);
 
     ctx.fillStyle = "black";
     ctx.font = "bold 13px sans-serif";
-    ctx.fillText("11",505,320);
+    ctx.fillText("0011",765,190);
 
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("0100",405,265);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("0101",525,265);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("0110",645,265);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("0111",765,265);
+
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1000",405,340);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1001",525,340);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1010",645,340);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1011",765,340);
+
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1100",405,415);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1101",525,415);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1110",645,415);
+
+    ctx.fillStyle = "black";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("1111",765,415);
     
     //Linhas de divisão da memoria
     ctx.beginPath();
     ctx.fillStyle = "black";
-    ctx.moveTo(500, 200);  // Movemos a pena em 10px tanto no eixo x como no eixo y
-    ctx.lineTo(500, 400);
+
+    //Linhas Verticais
+    ctx.moveTo(400, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(400, 470);
     ctx.stroke();
-    ctx.moveTo(400, 300);  // Movemos a pena em 10px tanto no eixo x como no eixo y
-    ctx.lineTo(600, 300);
+    ctx.moveTo(520, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(520, 470);
     ctx.stroke();
+    ctx.moveTo(640, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(640, 470);
+    ctx.stroke();
+    ctx.moveTo(760, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(760, 470);
+    ctx.stroke();
+    ctx.moveTo(880, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 470);
+    ctx.stroke();
+
+
+    //Linhas horizontais
+    ctx.moveTo(400, 170);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 170);
+    ctx.stroke();
+    ctx.moveTo(400, 245);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 245);
+    ctx.stroke();
+    ctx.moveTo(400, 320);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 320);
+    ctx.stroke();
+    ctx.moveTo(400, 395);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 395);
+    ctx.stroke();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    ctx.moveTo(400, 470);  // Movemos a pena em 10px tanto no eixo x como no eixo y
+    ctx.lineTo(880, 470);
+    ctx.stroke();
+
     ctx.closePath();
 
 
@@ -245,9 +400,9 @@ function Desenhar() {
     ctx.fillStyle = "purple";
     ctx.strokeStyle = "purple";
     ctx.moveTo(qa, qb);  // Movemos a pena em 10px tanto no eixo x como no eixo y
-    ctx.lineTo(qa, qb+100);
-    ctx.lineTo(qa+100, qb+100);
-    ctx.lineTo(qa+100, qb);
+    ctx.lineTo(qa, qb+75);
+    ctx.lineTo(qa+120, qb+75);
+    ctx.lineTo(qa+120, qb);
     ctx.lineTo(qa - 5, qb);
     ctx.stroke();
     ctx.closePath();
@@ -271,12 +426,12 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = "#298A08";
     ctx.font = "bold 15px sans-serif";   
-    ctx.fillText("RDM OUT",450,475);
-    ctx.fillRect(450,480 , 100, 70);
+    ctx.fillText("RDM OUT",450,520);
+    ctx.fillRect(450,520 , 100, 70);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_rdmout,470,530);
+    ctx.fillText(v_rdmout,460,560);
     ctx.closePath();
 
     //REM
@@ -297,8 +452,8 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = v_read;
     ctx.font = "bold 15px sans-serif";   
-    ctx.fillText("READ",610,240);
-    ctx.arc(610, 250, 10, 0, Math.PI*2, true);
+    ctx.fillText("READ",890,240);
+    ctx.arc(890, 250, 10, 0, Math.PI*2, true);
     ctx.fill();
     ctx.closePath();
 
@@ -306,8 +461,8 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = v_whrite;
     ctx.font = "bold 15px sans-serif";   
-    ctx.fillText("WRITE",610,340);
-    ctx.arc(610, 350, 10, 0, Math.PI*2, true);
+    ctx.fillText("WRITE",890,340);
+    ctx.arc(890, 350, 10, 0, Math.PI*2, true);
     ctx.fill();
     ctx.closePath();
 }
@@ -352,30 +507,106 @@ function clicar() {
 
 
         //colocar caixa na posição de memoria
-        if(v_rem == 00){
+        if(v_rem == 0){
             v_rdmout = v_m0;
             qa = 400;
-            qb = 200;
+            qb = 170;
             document.getElementById('acId').value = v_rdmout;
         }
-        if(v_rem == 01){
+        if(v_rem == 1){
             v_rdmout = v_m1;
-            qa = 500;
-            qb = 200;
+            qa = 520;
+            qb = 170;
             document.getElementById('acId').value = v_rdmout;
         }
         if(v_rem == 10){
             v_rdmout = v_m2;
-            qa = 400;
-            qb = 300;
+            qa = 640;
+            qb = 170;
             document.getElementById('acId').value = v_rdmout;
         }
         if(v_rem == 11){
             v_rdmout = v_m3;
-            qa = 500;
-            qb = 300;
+            qa = 760;
+            qb = 170;
             document.getElementById('acId').value = v_rdmout;
         }
+        //CaixaLinha 2
+        if(v_rem == 100){
+            v_rdmout = v_m4;
+            qa = 400;
+            qb = 245;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 101){
+            v_rdmout = v_m5;
+            qa = 520;
+            qb = 245;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 110){
+            v_rdmout = v_m6;
+            qa = 640;
+            qb = 245;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 111){
+            v_rdmout = v_m7;
+            qa = 760;
+            qb = 245;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        //CaixaLinha 3
+        if(v_rem == 1000){
+            v_rdmout = v_m8;
+            qa = 400;
+            qb = 320;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1001){
+            v_rdmout = v_m9;
+            qa = 520;
+            qb = 320;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1010){
+            v_rdmout = v_m10;
+            qa = 640;
+            qb = 320;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1011){
+            v_rdmout = v_m11;
+            qa = 760;
+            qb = 320;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        //CaixaLinha 4
+        if(v_rem == 1100){
+            v_rdmout = v_m12;
+            qa = 400;
+            qb = 395;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1101){
+            v_rdmout = v_m13;
+            qa = 520;
+            qb = 395;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1110){
+            v_rdmout = v_m14;
+            qa = 640;
+            qb = 395;
+            document.getElementById('acId').value = v_rdmout;
+        }
+        if(v_rem == 1111){
+            v_rdmout = v_m15;
+            qa = 760;
+            qb = 395;
+            document.getElementById('acId').value = v_rdmout;
+        }
+
     }else{
         v_read = "gray";
         
@@ -392,7 +623,102 @@ function clicar() {
         bExp = inativoE;
         
         v_rdmin = v_ac;
+
+        if(v_rem == 0){
+            v_m0 = v_ac;
+            qa = 400;
+            qb = 170;
+        }
+        if(v_rem == 1){
+            v_m1  = v_ac;
+            qa = 520;
+            qb = 170;
+        }
+        if(v_rem == 10){
+            v_m2 = v_ac;
+            qa = 640;
+            qb = 170;
+        }
+        if(v_rem == 11){
+            v_m3 = v_ac;
+            qa = 760;
+            qb = 170;
+        }
+        //CaixaLinha 2
+        if(v_rem == 100){
+            v_m4 = v_ac;
+            qa = 400;
+            qb = 245;
+        }
+        if(v_rem == 101){
+            v_m5 = v_ac;
+            qa = 520;
+            qb = 245;
+        }
+        if(v_rem == 110){
+            v_m6 = v_ac;
+            qa = 640;
+            qb = 245;
+            
+        }
+        if(v_rem == 111){
+            v_m7  = v_ac;
+            qa = 760;
+            qb = 245;
+            
+        }
+        //CaixaLinha 3
+        if(v_rem == 1000){
+            v_m8  = v_ac;
+            qa = 400;
+            qb = 320;
+            
+        }
+        if(v_rem == 1001){
+            v_m9  = v_ac;
+            qa = 520;
+            qb = 320;
+            
+        }
+        if(v_rem == 1010){
+            v_m10 = v_ac;
+            qa = 640;
+            qb = 320;
+            
+        }
+        if(v_rem == 1011){
+            v_m11 = v_ac;
+            qa = 760;
+            qb = 320;
+            
+        }
+        //CaixaLinha 4
+        if(v_rem == 1100){
+            v_m12 = v_ac;
+            qa = 400;
+            qb = 395;
+            
+        }
+        if(v_rem == 1101){
+            v_m13 = v_ac;
+            qa = 520;
+            qb = 395;
+            
+        }
+        if(v_rem == 1110){
+            v_m14 = v_ac;
+            qa = 640;
+            qb = 395;
+            
+        }
+        if(v_rem == 1111){
+            v_m15 = v_ac;
+            qa = 760;
+            qb = 395;
+            
+        }
         
+        /*
         if(v_rem == 00){
             v_m0 = v_ac;
             qa = 400;
@@ -414,7 +740,7 @@ function clicar() {
             qa = 500;
             qb = 300;
         }
-
+        */
     }else{
         v_whrite = "gray";
     }
