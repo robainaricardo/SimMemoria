@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <title>Simulador de Memoria</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
 	
     <div>
-        <canvas id="canvas" width="1000" height="610">
+        <canvas id="canvas" width="1000" height="600">
         Se você visualizar esse texto, seu browser não suporta a tag canvas.
         </canvas>
     </div>
+    
+    <!-- LABEL dos campos de I/O -->
+    <p > <span class="espOP">OPERACAO</span> <span class="espEND">END</span> <span class="espAC">AC</span></p>
+
+    <!-- Declaração do botao EXECUTAR-->
     <button type="button" onclick="clicar()">EXECUTAR</button>
     
+    <!-- Declaração do combo box para selecionar a operação-->
     <select id="opId">
     <option value="0">0 Leitura</option>
     <option value="1">1 Escrita</option>
@@ -22,7 +29,6 @@
     <script type="text/javascript" src="simMemoria.js"></script>
 
     
-
 </select>
 
     

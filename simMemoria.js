@@ -2,7 +2,7 @@ var canvas;//o elemento canvas sobre o qual desenharemos
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 
 var WIDTH = 1000//largura da área retangular
-var HEIGHT = 610;//altura da área retangular
+var HEIGHT = 600;//altura da área retangular
 
 var v_rem = "";
 var v_rdmin = "";
@@ -41,6 +41,7 @@ var end = document.createElement("INPUT");
 end.type="text";
 end.size="2";
 end.id='endId';
+
 
 var ac = document.createElement("INPUT");
 ac.type="text";

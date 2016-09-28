@@ -1,0 +1,22 @@
+p {
+    font-size: 12px; 
+    padding: 0px;
+    margin: 0px;   
+}
+
+
+/*spans utilizados para socionar labels*/
+span.espEND{
+	position:relative;
+	left: 108px;
+}
+
+span.espOP{
+	position:relative;
+	left: 95px;
+}
+
+span.espAC{
+	position:relative;
+	left: 130px;
+}
