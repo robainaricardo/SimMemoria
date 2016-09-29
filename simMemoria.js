@@ -12,30 +12,30 @@ var v_whrite = "gray";
 var v_rem = "";
 var v_ac = "";
 var v_dec = "";
-var v_m0 = "0";
-var v_m1 = "1";
-var v_m2 = "2";
-var v_m3 = "3";
-var v_m4 = "4";
-var v_m5 = "5";
-var v_m6 = "6";
-var v_m7 = "7";
-var v_m8 = "8";
-var v_m9 = "9";
-var v_m10 = "10";
-var v_m11 = "11";
-var v_m12 = "12";
-var v_m13 = "13";
-var v_m14 = "14";
-var v_m15 = "15";
+var v_m0 = "";
+var v_m1 = "";
+var v_m2 = "";
+var v_m3 = "";
+var v_m4 = "";
+var v_m5 = "";
+var v_m6 = "";
+var v_m7 = "";
+var v_m8 = "";
+var v_m9 = "";
+var v_m10 = "";
+var v_m11 = "";
+var v_m12 = "";
+var v_m13 = "";
+var v_m14 = "";
+var v_m15 = "";
 var qa = -110;
 var qb = -110;
 
 var inativoC = "gray";
 var inativoE = "0.5";
 
-var ativoC = "green";
-var ativoE = "3";
+var ativoC = "SeaGreen";
+var ativoE = "4";
 
 var aCor = "gray";
 var aExp = "0.5";
@@ -45,6 +45,18 @@ var bExp = "0.5";
 
 var cCor = "gray";
 var cExp = "0.5";
+
+
+var endCor = "gray";
+var endExp = "0.5";
+var endCorA = "purple";
+var endExpA = "3";
+
+var controleCorP = "gray";
+var controleCor = "red";
+var controleCorR = "gray";
+var controleCorW = "gray";
+var controleExp = "0.5";
 
 var op = document.getElementById("opId");
 op.id='opCombo';
@@ -90,20 +102,20 @@ function Desenhar() {
 
     //linha do op para o decodificador
     ctx.beginPath();
-    ctx.lineWidth = aExp;
-    ctx.strokeStyle = aCor;
+    ctx.lineWidth = controleExp;
+    ctx.strokeStyle = controleCorP;
     ctx.moveTo(120, 300);  
     ctx.lineTo(120, 700);
     ctx.stroke();
     ctx.closePath();
 
-    //linha do pc para o rdmout
+    //linha do ac para o rdmout
     ctx.beginPath();
     ctx.lineWidth = bExp;
     ctx.strokeStyle = bCor;
-    ctx.moveTo(210, 700);  
-    ctx.lineTo(210, 510);
-    ctx.lineTo(460, 510);
+    ctx.moveTo(250, 700);  
+    ctx.lineTo(250, 560);
+    ctx.lineTo(460, 560);
     ctx.stroke();
     ctx.closePath();
 
@@ -111,8 +123,8 @@ function Desenhar() {
     ctx.beginPath();
     ctx.lineWidth = cExp;
     ctx.strokeStyle = cCor;
-    ctx.moveTo(200, 700);  
-    ctx.lineTo(200, 450);
+    ctx.moveTo(235, 700);  
+    ctx.lineTo(235, 450);
     ctx.lineTo(350, 450);
     ctx.lineTo(350, 75);
     ctx.lineTo(460, 75);
@@ -123,8 +135,8 @@ function Desenhar() {
 
     //Read
     ctx.beginPath();
-    ctx.lineWidth = bExp;
-    ctx.strokeStyle = bCor;
+    ctx.lineWidth = controleExp;
+    ctx.strokeStyle = controleCorR;
     ctx.moveTo(120, 300);  
     ctx.lineTo(120, 20);
     ctx.lineTo(1200, 20);
@@ -135,8 +147,8 @@ function Desenhar() {
 
     //white
     ctx.beginPath();
-    ctx.lineWidth = cExp;
-    ctx.strokeStyle = cCor;
+    ctx.lineWidth = controleExp;
+    ctx.strokeStyle = controleCorW;
     ctx.moveTo(115, 300);  
     ctx.lineTo(115, 15);
     ctx.lineTo(1205, 15);
@@ -147,10 +159,10 @@ function Desenhar() {
 
     //linha do end para o REM
     ctx.beginPath();
-    ctx.lineWidth = aExp;
-    ctx.strokeStyle = aCor;
-    ctx.moveTo(160, 700);  
-    ctx.lineTo(160, 400);
+    ctx.lineWidth = endExp;
+    ctx.strokeStyle = endCor;
+    ctx.moveTo(190, 700);  
+    ctx.lineTo(190, 400);
     ctx.lineTo(285, 400);
     ctx.lineTo(285, 300);
     ctx.stroke();
@@ -158,8 +170,8 @@ function Desenhar() {
     
     //LInha do REM para a memoria
     ctx.beginPath();
-    ctx.lineWidth = aExp;
-    ctx.strokeStyle = aCor;
+    ctx.lineWidth = endExp;
+    ctx.strokeStyle = endCor;
     ctx.moveTo(260, 300);  // Movemos a pena em 10px tanto no eixo x como no eixo y
     ctx.lineTo(410, 300);
     ctx.stroke();
@@ -179,7 +191,7 @@ function Desenhar() {
     ctx.lineWidth = bExp;
     ctx.strokeStyle = bCor;
     ctx.moveTo(500, 200);  // Movemos a pena em 10px tanto no eixo x como no eixo y
-    ctx.lineTo(500, 490);
+    ctx.lineTo(500, 540);
     ctx.stroke();
     ctx.closePath();
 
@@ -202,7 +214,7 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = "#BEF781";
     ctx.font = "bold 18px sans-serif";
-    ctx.fillText("MEMORIA",400,170);
+    ctx.fillText("MEMORIA",400,165);
     ctx.fillRect(400,170 ,480, 300);
     ctx.closePath();
 
@@ -426,7 +438,7 @@ function Desenhar() {
     ctx.beginPath();
     ctx.fillStyle = "#298A08";
     ctx.font = "bold 15px sans-serif";   
-    ctx.fillText("RDM OUT",450,520);
+    ctx.fillText("RDM OUT",450,515);
     ctx.fillRect(450,520 , 100, 70);
 
     ctx.fillStyle = "white";
@@ -443,7 +455,7 @@ function Desenhar() {
 
     ctx.fillStyle = "white";
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(v_rem,270,300);
+    ctx.fillText(v_rem,260,300);
     ctx.closePath();
 
      //ctx.fillText(texto,posicao x, posicao y);
@@ -496,9 +508,17 @@ function clicar() {
     aCor = ativoC;
     aExp = ativoE;
 
+    endExp = endExpA;
+    endCor = endCorA;
+
+
+    controleCorP = controleCor;
+
     //Leitura
     if(v_dec == 0){
         v_read = "blue";
+        controleCorR = controleCor;
+        controleCorW = inativoC;
         //v_whrite = "gray";
         bCor = ativoC;
         bExp = ativoE;
@@ -615,6 +635,7 @@ function clicar() {
 
     //Escrita
     if(v_dec == 1){
+
         v_whrite = "blue";
         cCor = ativoC;
         cExp = ativoE;
@@ -622,6 +643,10 @@ function clicar() {
         bCor = inativoC;
         bExp = inativoE;
         
+
+        controleCorW = controleCor;
+        controleCorR = inativoC;
+
         v_rdmin = v_ac;
 
         if(v_rem == 0){
@@ -718,29 +743,7 @@ function clicar() {
             
         }
         
-        /*
-        if(v_rem == 00){
-            v_m0 = v_ac;
-            qa = 400;
-            qb = 200;
-        }
-        if(v_rem == 01){
-            v_m1 = v_ac;
-            qa = 500;
-            qb = 200;
-            
-        }
-        if(v_rem == 10){
-            v_m2 = v_ac;
-            qa = 400;
-            qb = 300;
-        }
-        if(v_rem == 11){
-            v_m3 = v_ac;
-            qa = 500;
-            qb = 300;
-        }
-        */
+     
     }else{
         v_whrite = "gray";
     }
